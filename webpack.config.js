@@ -16,10 +16,17 @@ module.exports = {
       {
         test: /\.ts$/,
         use: [
+          /** @see https://www.npmjs.com/package/babel-loader */
+          'babel-loader',
+
           /** @see https://www.npmjs.com/package/ts-loader */
           'ts-loader'
         ]
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
     ]
   }
 }
